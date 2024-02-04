@@ -2,7 +2,7 @@
 import IconPlus from './icons/IconPlus.vue'
 import IconClose from './icons/IconClose.vue'
 
-import { ref, type Ref, nextTick, computed } from 'vue'
+import { ref, type Ref, nextTick, computed, type StyleValue } from 'vue'
 const plusSign: Ref<HTMLElement | null> = ref(null)
 const exploreBlock: Ref<HTMLElement | null> = ref(null)
 
@@ -74,14 +74,14 @@ const hideDetailsClick = () => {
 }
 
 // Computed style for the exploreBlock
-const exploreBlockStyle = computed(() => ({
+const exploreBlockStyle = computed<StyleValue>(() => ({
   opacity: showDetails.value ? 1 : 0,
   visibility: showDetails.value ? 'visible' : 'hidden'
   // transition: 'opacity 0.5s ease, visibility 0.5s'
 }))
 
 // Computed style for the detailsBlock
-const detailsBlockStyle = computed(() => ({
+const detailsBlockStyle = computed<StyleValue>(() => ({
   opacity: showSVG.value ? 1 : 0,
   visibility: showSVG.value ? 'visible' : 'hidden'
   // transition: 'opacity 0.5s ease, visibility 0.5s'
