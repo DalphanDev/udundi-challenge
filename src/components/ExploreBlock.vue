@@ -45,6 +45,8 @@ const calcTransform = () => {
 }
 
 const showDetailsClick = () => {
+  if (isTransforming.value) return
+
   // Save the coordinates of the plus sign
   const { left, top } = plusCoords.value
   plusCoords.value = { left, top }
